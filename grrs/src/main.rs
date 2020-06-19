@@ -24,13 +24,15 @@
 //}
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let result = std::fs::read_to_string("teste.txt"); 
 
-    let content = match result {
-        Ok(content) => { content },
-        Err(error) => { return Err(error.into()); }
-    };
+    //sem shortcut
+    //let result = std::fs::read_to_string("teste.txt"); 
+    //let content = match result {
+        //Ok(content) => { content },
+        //Err(error) => { return Err(error.into()); }
+    //};
 
+    let content = std::fs::read_to_string("teste.txt")?;
     println!("Ó o que tinha la: {}", content);
     Ok(())
 }
